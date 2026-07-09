@@ -15,6 +15,7 @@ import Medica_2025 from "../assets/images/blog/Medica 2025.png";
 import Medlab_2025 from "../assets/images/blog/Medlab 2025.png";
 import WFH_Labs_2026 from "../assets/images/blog/WFH Labs 2026.png";
 import WHX_Dubai_2026 from "../assets/images/blog/WHX Dubai 2026.png";
+import { AnimatedText } from "./AnimatedText";
 
 const newsItems = [
   {
@@ -115,11 +116,18 @@ export function NewsUpdates() {
         <div className="sec-title mb-[50px]">
           <div className="flex justify-between items-center flex-wrap gap-4">
             <h2 className="title text-3xl md:text-4xl font-bold text-[#0f3d2e] tracking-wide">
-              News Updates
+              <AnimatedText
+                inline
+                lines={[
+                  {
+                    text: "News Updates",
+                  },
+                ]}
+              />
             </h2>
             <a
-              href="#"
-              className="btn-two inline-block bg-[#0f3d2e] hover:bg-[#1a5c47] text-white px-6 py-2.5 rounded font-medium transition-colors text-sm uppercase tracking-wider"
+              href="/blogs"
+              className="btn-two inline-block bg-[#0f3d2e] hover:bg-[#1a5c47] text-white px-10 py-5 rounded font-medium transition-colors text-sm uppercase tracking-wider"
             >
               Explore More
             </a>

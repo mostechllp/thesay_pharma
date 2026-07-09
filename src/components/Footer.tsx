@@ -39,7 +39,7 @@ export function Footer() {
         >
           <div className="sec-title max-w-[570px]">
             <motion.h2
-              className="title text-white text-3xl md:text-4xl font-bold"
+              className="title text-white text-3xl md:text-5xl font-bold"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

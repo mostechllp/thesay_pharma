@@ -14,8 +14,15 @@ import { CEOMessage } from '../components/CEOMessage';
 import { OurTeam } from '../components/OurTeam';
 import { OurPartners } from '../components/OurPartners';
 import { Footer } from '../components/Footer';
+import { SEO } from '../components/SEO';
 export function Home() {
   return (
+    <>
+    <SEO
+        title="THESAY Pharma - Leading Pharma Distributor Dubai & UAE" 
+        description="THESAY Pharma, a top pharmaceutical distributor in Dubai & UAE, supplies a wide range of 600+ healthcare products from 50+ multinational companies globally."
+        keywords='pharmaceutical distributor, healthcare dubai, medicine supply, wholesale pharma, Thesay Pharma UAE'
+      />
     <div className="min-h-screen bg-white font-sans text-gray-800 selection:bg-[#27ae3f] selection:text-white">
       
       <Header />
@@ -34,6 +41,8 @@ export function Home() {
         <OurPartners />
       </main>
       <Footer />
-    </div>);
+    </div>
+    </>
+    );
 
 }

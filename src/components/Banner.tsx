@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import thesay from "../assets/images/gallery/thesay.jpeg";
 import shape from "../assets/images/shapes/consult-shape.webp";
+import { AnimatedText } from "./AnimatedText";
 
 export function Banner() {
   return (
@@ -32,21 +33,28 @@ export function Banner() {
       {/* Content */}
       <div className="container mx-auto px-4 md:px-20 relative z-20">
         <div className="max-w-4xl">
-          <motion.h2
-            className="text-white font-bold leading-tight"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+          <h2 className="text-white font-bold leading-tight">
             <span className="block text-2xl md:text-4xl text-gray-300 font-light mb-2">
-              Redefining Global Healthcare
+              <AnimatedText
+                lines={[
+                  {
+                    text: "Redefining Global Healthcare",
+                    className: "text-2xl md:text-4xl text-gray-300 font-light",
+                  },
+                  {
+                    text: "Excellence Through Efficiency",
+                    className:
+                      "text-4xl md:text-4xl lg:text-5xl font-bold text-white",
+                  },
+                  {
+                    text: "And Partnerships",
+                    className:
+                      "text-4xl md:text-4xl lg:text-5xl font-bold text-white",
+                  },
+                ]}
+              />
             </span>
-            <span className="text-4xl md:text-4xl lg:text-5xl">
-              Excellence Through Efficiency
-              <br /> And Partnerships
-            </span>
-          </motion.h2>
+          </h2>
         </div>
       </div>
     </section>

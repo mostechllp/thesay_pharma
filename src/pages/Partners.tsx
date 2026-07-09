@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { motion } from 'framer-motion';
+import React, { Component } from "react";
+import { motion } from "framer-motion";
 
-import { Header } from '../components/Header';
-import { PageHero } from '../components/PageHero';
-import { Footer } from '../components/Footer';
+import { Header } from "../components/Header";
+import { PageHero } from "../components/PageHero";
+import { Footer } from "../components/Footer";
 
 // Import all partner logos (1-61)
 import partner1 from "../assets/images/partners/1.webp";
@@ -67,89 +67,195 @@ import partner58 from "../assets/images/partners/58.webp";
 import partner59 from "../assets/images/partners/59.webp";
 import partner60 from "../assets/images/partners/60.webp";
 import partner61 from "../assets/images/partners/61.webp";
+import { SEO } from "../components/SEO";
 
 // Partner names array
 const partnerNames = [
-  'SMICK', 'Eskag Pharma', 'SK plasma', 'Incepta', 'Eczane', 'Extrovis',
-  'Oscar Pharma', 'Renhe', 'Venus', 'SLC Pharma', 'CS', 'DNA-DX',
-  'Genetic', 'Piramal Critical Care', 'medicair', 'Alvogen', 'Orion Pharma',
-  'CDBIO', 'Eriochem', 'Biosidus', 'Serum Institute of India',
-  'Indian Immunologicals', 'Galenicum', 'Biocon', 'Bharat Biotech',
-  'Bharat Serums & Vaccines', 'ZTE Bio', 'Biological E Limited', 'Polifarma',
-  'Novell', 'Hanlim Pharm', 'Kalcex', 'DEVA', 'Sinovac', 'Accord',
-  'Jubilant LifeSciences', 'ELPEN', 'Hepalink', 'Gan & Lee', 'VUAB Pharma',
-  'Seacross', 'Zenex Animal Health', 'Manuka Vet', 'Contura', 'Pet Naturals',
-  'JT Pharma', 'Univet', 'Dong Bang Co', 'THESAY', 'LG Chem',
-  'Amega Biotech', 'Huisheng Biopharm', 'Sinopharm', 'Normon', 'Emcure',
-  'CKD Pharm', 'Sinotherapeutics', 'Poly Pharm', 'Gland', 'Invengene',
-  'eubiologics'
+  "SMICK",
+  "Eskag Pharma",
+  "SK plasma",
+  "Incepta",
+  "Eczane",
+  "Extrovis",
+  "Oscar Pharma",
+  "Renhe",
+  "Venus",
+  "SLC Pharma",
+  "CS",
+  "DNA-DX",
+  "Genetic",
+  "Piramal Critical Care",
+  "medicair",
+  "Alvogen",
+  "Orion Pharma",
+  "CDBIO",
+  "Eriochem",
+  "Biosidus",
+  "Serum Institute of India",
+  "Indian Immunologicals",
+  "Galenicum",
+  "Biocon",
+  "Bharat Biotech",
+  "Bharat Serums & Vaccines",
+  "ZTE Bio",
+  "Biological E Limited",
+  "Polifarma",
+  "Novell",
+  "Hanlim Pharm",
+  "Kalcex",
+  "DEVA",
+  "Sinovac",
+  "Accord",
+  "Jubilant LifeSciences",
+  "ELPEN",
+  "Hepalink",
+  "Gan & Lee",
+  "VUAB Pharma",
+  "Seacross",
+  "Zenex Animal Health",
+  "Manuka Vet",
+  "Contura",
+  "Pet Naturals",
+  "JT Pharma",
+  "Univet",
+  "Dong Bang Co",
+  "THESAY",
+  "LG Chem",
+  "Amega Biotech",
+  "Huisheng Biopharm",
+  "Sinopharm",
+  "Normon",
+  "Emcure",
+  "CKD Pharm",
+  "Sinotherapeutics",
+  "Poly Pharm",
+  "Gland",
+  "Invengene",
+  "eubiologics",
 ];
 
 // Partner images array
 const partnerImages = [
-  partner1, partner2, partner3, partner4, partner5, partner6,
-  partner7, partner8, partner9, partner10, partner11, partner12,
-  partner13, partner14, partner15, partner16, partner17, partner18,
-  partner19, partner20, partner21, partner22, partner23, partner24,
-  partner25, partner26, partner27, partner28, partner29, partner30,
-  partner31, partner32, partner33, partner34, partner35, partner36,
-  partner37, partner38, partner39, partner40, partner41, partner42,
-  partner43, partner44, partner45, partner46, partner47, partner48,
-  partner49, partner50, partner51, partner52, partner53, partner54,
-  partner55, partner56, partner57, partner58, partner59, partner60,
-  partner61
+  partner1,
+  partner2,
+  partner3,
+  partner4,
+  partner5,
+  partner6,
+  partner7,
+  partner8,
+  partner9,
+  partner10,
+  partner11,
+  partner12,
+  partner13,
+  partner14,
+  partner15,
+  partner16,
+  partner17,
+  partner18,
+  partner19,
+  partner20,
+  partner21,
+  partner22,
+  partner23,
+  partner24,
+  partner25,
+  partner26,
+  partner27,
+  partner28,
+  partner29,
+  partner30,
+  partner31,
+  partner32,
+  partner33,
+  partner34,
+  partner35,
+  partner36,
+  partner37,
+  partner38,
+  partner39,
+  partner40,
+  partner41,
+  partner42,
+  partner43,
+  partner44,
+  partner45,
+  partner46,
+  partner47,
+  partner48,
+  partner49,
+  partner50,
+  partner51,
+  partner52,
+  partner53,
+  partner54,
+  partner55,
+  partner56,
+  partner57,
+  partner58,
+  partner59,
+  partner60,
+  partner61,
 ];
 
 // Combine partners with their images
 const partners = partnerNames.map((name, index) => ({
   name: name,
-  image: partnerImages[index] || partnerImages[0] // fallback to first image if missing
+  image: partnerImages[index] || partnerImages[0], // fallback to first image if missing
 }));
 
 export function Partners() {
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-800 selection:bg-[#27ae3f] selection:text-white">
-      <Header />
-      <main>
-        <PageHero title="We Are Partnering With" breadcrumb="Manufacturers" />
+    <>
+      <SEO
+        title="Our Partners - THESAY PHARMA | Global Pharmaceutical Collaborations"
+        description="We partner with over 50+ multinational pharmaceutical manufacturers across the globe to bring trusted healthcare products to the UAE and international markets."
+        keywords="pharma partners, pharmaceutical manufacturers, healthcare collaborations, medicine suppliers dubai, thesay pharma partners"
+      />
+      <div className="min-h-screen bg-white font-sans text-gray-800 selection:bg-[#27ae3f] selection:text-white">
+        <Header />
+        <main>
+          <PageHero title="We Are Partnering With" breadcrumb="Manufacturers" />
 
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 md:px-8">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
-              {partners.map((partner, index) => (
-                <motion.div
-                  key={partner.name}
-                  initial={{
-                    opacity: 0,
-                    y: 20
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0
-                  }}
-                  viewport={{
-                    once: true,
-                    margin: '-40px'
-                  }}
-                  transition={{
-                    duration: 0.4,
-                    delay: index % 6 * 0.06
-                  }}
-                  className="aspect-[3/2] bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow flex items-center justify-center p-4"
-                >
-                  <img
-                    src={partner.image}
-                    alt={partner.name}
-                    className="max-h-30 max-w-full object-contain"
-                    loading="lazy"
-                  />
-                </motion.div>
-              ))}
+          <section className="py-20 bg-white">
+            <div className="container mx-auto px-4 md:px-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
+                {partners.map((partner, index) => (
+                  <motion.div
+                    key={partner.name}
+                    initial={{
+                      opacity: 0,
+                      y: 20,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    viewport={{
+                      once: true,
+                      margin: "-40px",
+                    }}
+                    transition={{
+                      duration: 0.4,
+                      delay: (index % 6) * 0.06,
+                    }}
+                    className="aspect-[3/2] bg-white border border-gray-100 rounded-xl shadow-sm  flex items-center justify-center p-4 group cursor-pointer"
+                  >
+                    <img
+                      src={partner.image}
+                      alt={partner.name}
+                      className="max-h-30 max-w-full object-contain transition-transform duration-300 ease-in-out group-hover:scale-110"
+                      loading="lazy"
+                    />
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 }

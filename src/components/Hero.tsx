@@ -23,7 +23,7 @@ export function Hero() {
       </video>
 
       {/* Overlay */}
-      <div className="video-banner-overlay absolute top-0 left-0 w-full h-full z-20 bg-gradient-to-br from-[#0a2314]/75 to-[#05140a]/95"></div>
+      <div className="video-banner-overlay absolute top-0 left-0 w-full h-full z-20 bg-gradient-to-br from-[#274732]/85 to-[#274732]/85"></div>
 
       {/* Content Container */}
       <div className="container mx-auto px-4 md:px-16 relative z-30 w-full">
@@ -36,7 +36,7 @@ export function Hero() {
               transition={{ duration: 0.8 }}
               className="video-banner-content text-white max-w-[900px] w-full text-left"
             >
-              <h1 className="title text-[76px] leading-[1.05] font-extrabold text-white mb-5 drop-shadow-[0_4px_15px_rgba(0,0,0,0.6)] tracking-[-1.5px]">
+              <h1 className="title text-[76px] leading-[1.05] font-semibold text-white mb-5 drop-shadow-[0_4px_15px_rgba(0,0,0,0.6)] tracking-[-1.5px]">
                 We Deliver<br />
                 <span className="font-extrabold text-[#48e56f] drop-shadow-[0_4px_15px_rgba(0,0,0,0.6)]">
                   What We<br/> Promise

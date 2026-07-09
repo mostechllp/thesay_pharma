@@ -1,39 +1,47 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
-import gallery1 from "../assets/images/gallery/1.jpeg"
-import gallery2 from "../assets/images/gallery/2.jpeg"
-import gallery3 from "../assets/images/gallery/3.jpeg"
-import gallery4 from "../assets/images/gallery/4.jpeg"
-import gallery5 from "../assets/images/gallery/5.jpeg"
-import gallery6 from "../assets/images/gallery/6.png"
-import { ArrowUpRight } from 'lucide-react';
-import shape from "../assets/images/shapes/case-three-shape.webp" 
+import gallery1 from "../assets/images/gallery/1.jpeg";
+import gallery2 from "../assets/images/gallery/2.jpeg";
+import gallery3 from "../assets/images/gallery/3.jpeg";
+import gallery4 from "../assets/images/gallery/4.jpeg";
+import gallery5 from "../assets/images/gallery/5.jpeg";
+import gallery6 from "../assets/images/gallery/6.png";
+import { ArrowUpRight } from "lucide-react";
+import shape from "../assets/images/shapes/case-three-shape.webp";
+import { AnimatedText } from "./AnimatedText";
 
 const events = [
   {
-    title: 'Duphat 2026',
-    date: '25–27 August',
-    description: "MENA's largest gathering of the entire pharmaceutical value chain.",
-    status: 'UPCOMING'
+    title: "Duphat 2026",
+    date: "25–27 August",
+    description:
+      "MENA's largest gathering of the entire pharmaceutical value chain.",
+    status: "UPCOMING",
   },
   {
-    title: 'ADIHEX 2026',
-    date: '28 Aug-06 Sept',
-    description: 'An annual celebration of Emirati heritage and cultural traditions.',
-    status: 'UPCOMING'
+    title: "ADIHEX 2026",
+    date: "28 Aug-06 Sept",
+    description:
+      "An annual celebration of Emirati heritage and cultural traditions.",
+    status: "UPCOMING",
   },
   {
-    title: 'CPHI Milan 2026',
-    date: '06-08 October',
-    description: 'Global platform showcasing innovative healthcare solutions.',
-    status: 'UPCOMING'
-  }
+    title: "CPHI Milan 2026",
+    date: "06-08 October",
+    description: "Global platform showcasing innovative healthcare solutions.",
+    status: "UPCOMING",
+  },
 ];
 
 // Gallery images (replace with actual imports)
 const galleryImages = [
-  gallery1, gallery2, gallery3, gallery4, gallery5, gallery6
+  gallery1,
+  gallery2,
+  gallery3,
+  gallery4,
+  gallery5,
+  gallery6,
 ];
 
 export function UpcomingEvents() {
@@ -61,8 +69,15 @@ export function UpcomingEvents() {
               transition={{ duration: 0.6 }}
             >
               <div className="sec-title mb-[30px]">
-                <h2 className="title text-white text-3xl md:text-4xl font-bold tracking-wide">
-                  Upcoming Events
+                <h2 className="title text-3xl md:text-4xl font-bold text-white tracking-wide">
+                  <AnimatedText
+                    inline
+                    lines={[
+                      {
+                        text: "Upcoming Events",
+                      },
+                    ]}
+                  />
                 </h2>
               </div>
             </motion.div>
@@ -73,15 +88,15 @@ export function UpcomingEvents() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ 
+                transition={{
                   duration: 0.6,
-                  delay: index * 0.15
+                  delay: index * 0.15,
                 }}
                 className="sec-title mb-[30px]"
               >
                 {/* Date */}
                 <h6
-  className="
+                  className="
     inline-block
     bg-[#00701C]
     text-white
@@ -93,15 +108,15 @@ export function UpcomingEvents() {
     rounded-full
     mb-3
   "
->
-  {event.date}
-</h6>
-                
+                >
+                  {event.date}
+                </h6>
+
                 {/* Title */}
                 <h4 className="title text-white text-xl md:text-2xl font-bold mb-2.5">
                   {event.title}
                 </h4>
-                
+
                 {/* Description */}
                 <p className="text-white/80 text-[16px] leading-[30px]">
                   {event.description}
@@ -133,14 +148,14 @@ export function UpcomingEvents() {
                     className="w-full  transition-transform duration-500 group-hover:scale-110"
                   />
                 </figure>
-                
+
                 {/* Hover Icon */}
                 <a
-                  href="#"
+                  href="/gallery"
                   className="icon w-[50px] h-[50px] bg-[#27ae3f] text-white rounded-full flex items-center justify-center absolute top-[30px] right-[30px] z-10 opacity-0 invisible transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:right-[40px]"
                 >
-                  <ArrowUpRight/>
-                </a> 
+                  <ArrowUpRight />
+                </a>
               </div>
             ))}
           </motion.div>

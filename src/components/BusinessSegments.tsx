@@ -8,7 +8,7 @@ import iconDiagnostics from "../assets/images/about/22.svg";
 import iconVeterinary from "../assets/images/about/23.svg";
 import iconManufacturing from "../assets/images/about/21.svg";
 
-const segments = [
+export const segments = [
   {
     title: 'HUMAN HEALTHCARE',
     icon: iconHealthcare,

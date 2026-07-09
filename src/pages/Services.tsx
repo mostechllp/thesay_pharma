@@ -16,6 +16,7 @@ import { Footer } from "../components/Footer";
 import { BusinessSegments } from "../components/BusinessSegments";
 import { OurServices } from "../components/OurServices";
 import dualCircle from "../assets/images/shapes/dual-circle420.png";
+import { SEO } from "../components/SEO";
 
 const services = [
   {
@@ -87,47 +88,53 @@ const excellence = [
 
 export function Services() {
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-800 selection:bg-[#27ae3f] selection:text-white">
-      <Header />
-      <main>
-        <PageHero title="Services" breadcrumb="Services" />
+    <>
+      <SEO
+        title="Our Services - THESAY PHARMA | Market Intelligence & Distribution"
+        description="Explore our comprehensive pharmaceutical services including market intelligence, tender business, sales & marketing, institutional supply, and global logistics."
+        keywords="pharma services, market intelligence, pharmaceutical logistics, tender business dubai, medical distribution services"
+      />
+      <div className="min-h-screen bg-white font-sans text-gray-800 selection:bg-[#27ae3f] selection:text-white">
+        <Header />
+        <main>
+          <PageHero title="Services" breadcrumb="Services" />
 
-        <BusinessSegments />
+          <BusinessSegments />
 
-        <OurServices />
+          <OurServices />
 
-        {/* Driving Excellence - numbered columns */}
-        <section className="py-20 bg-[#f7f6f2] px-[40px] relative overflow-visible">
-          {/* Dual Circle Shape - positioned at the bottom left of the section */}
-          <div className="absolute -bottom-[200px] -left-[200px] z-[1] pointer-events-none">
-            <img
-              src={dualCircle}
-              alt="Decorative Shape"
-              className="animate-spin-slow w-[500px] opacity-30"
-              style={{ animationDuration: "20s" }}
-              loading="lazy"
-            />
-          </div>
+          {/* Driving Excellence - numbered columns */}
+          <section className="py-20 bg-[#f7f6f2] px-[40px] relative overflow-visible">
+            {/* Dual Circle Shape - positioned at the bottom left of the section */}
+            <div className="absolute -bottom-[200px] -left-[200px] z-[1] pointer-events-none">
+              <img
+                src={dualCircle}
+                alt="Decorative Shape"
+                className="animate-spin-slow w-[500px] opacity-30"
+                style={{ animationDuration: "20s" }}
+                loading="lazy"
+              />
+            </div>
 
-          <div className="container mx-auto px-4 md:px-8 relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold text-[#0f3d2e] mb-14">
-              Driving Excellence In Global Healthcare Solutions
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-              {excellence.map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="group relative z-10"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.12,
-                  }}
-                >
-                  <span
-                    className="
+            <div className="container mx-auto px-4 md:px-8 relative z-10">
+              <h2 className="text-3xl md:text-5xl font-bold text-[#0f3d2e] mb-14">
+                Driving Excellence In Global Healthcare Solutions
+              </h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+                {excellence.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="group relative z-10"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      delay: index * 0.12,
+                    }}
+                  >
+                    <span
+                      className="
               block
               text-6xl
               font-bold
@@ -139,19 +146,20 @@ export function Services() {
               group-hover:text-[#0f3d2e]
               group-hover:[-webkit-text-stroke:0px]
             "
-                  >
-                    {item.num}
-                  </span>
-                  <p className="text-gray-500 text-lg leading-relaxed">
-                    {item.text}
-                  </p>
-                </motion.div>
-              ))}
+                    >
+                      {item.num}
+                    </span>
+                    <p className="text-gray-500 text-lg leading-relaxed">
+                      {item.text}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 }

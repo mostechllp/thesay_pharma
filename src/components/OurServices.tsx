@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import serviceShape from "../assets/images/shapes/service-block-shape.webp";
+import { AnimatedText } from "./AnimatedText";
 
 const services = [
   {
@@ -205,15 +206,16 @@ export function OurServices() {
         {/* Section Title */}
         <div className="sec-title mb-[50px]">
           <div className="flex-content">
-            <motion.h2
-              className="title text-3xl md:text-4xl font-bold text-[#0f3d2e] uppercase tracking-wide"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              OUR SERVICES
-            </motion.h2>
+            <h2 className="title text-3xl md:text-4xl font-bold text-[#0f3d2e] tracking-wide">
+              <AnimatedText
+                inline
+                lines={[
+                  {
+                    text: "OUR SERVICES",
+                  },
+                ]}
+              />
+            </h2>
           </div>
         </div>
 

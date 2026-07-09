@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import img1 from "../assets/images/ddd3.webp";
+import { AnimatedText } from "./AnimatedText";
 export function AboutSection() {
   return (
     <section className="py-20 bg-white">
@@ -55,9 +56,15 @@ export function AboutSection() {
             </span>
             <h2 className="text-4xl md:text-5xl text-gray-900 mb-6 leading-[52px]">
               YOUR TRUSTED PARTNER IN{" "}
-              <span className="text-black font-bold">
-                HEALTHCARE AND PHARMACEUTICAL SOLUTIONS
-              </span>
+              <AnimatedText
+                inline
+                lines={[
+                  {
+                    text: "HEALTHCARE AND PHARMACEUTICAL SOLUTIONS",
+                    className: "text-black font-bold",
+                  },
+                ]}
+              />
             </h2>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">

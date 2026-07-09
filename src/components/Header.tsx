@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
+import productListPDF from "../assets/images/THESAYPHARMAPRODUCTLIST.pdf";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -35,7 +36,7 @@ export function Header() {
                   <Mail size={14} className="text-white" />
                   <a
                     href="mailto:info@thesaypharma.ae"
-                    className="text-white font-medium hover:text-[#00701c] transition-colors"
+                    className="text-white font-medium"
                   >
                     info@thesaypharma.ae
                   </a>
@@ -53,7 +54,7 @@ export function Header() {
                     href="https://www.linkedin.com/company/thesaypharma"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-[#00701c] transition-colors inline-block hover:rotate-y-[-360deg] duration-700"
+                    className="text-white hover:text-[#00701c] transition-colors inline-block hover:[animation:flip-twice_0.7s_ease-in-out]"
                     aria-label="LinkedIn"
                   >
                     <Linkedin size={14} />
@@ -64,7 +65,7 @@ export function Header() {
                     href="https://www.instagram.com/thesay.pharma/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-[#00701c] transition-colors inline-block hover:rotate-y-[-360deg] duration-700"
+                    className="text-white hover:text-[#00701c] transition-colors inline-block hover:[animation:flip-twice_0.7s_ease-in-out]"
                     aria-label="Instagram"
                   >
                     <Instagram size={14} />
@@ -163,7 +164,7 @@ export function Header() {
                     <li>
                       <Link
                         to="/whats-new"
-                        className="text-green-700 hover:text-[#1a4137] transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#1a4137] hover:after:w-full after:transition-all after:duration-300"
+                        className="text-green-700 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#1a4137] hover:after:w-full after:transition-all after:duration-300"
                       >
                         What's New
                       </Link>
@@ -175,8 +176,9 @@ export function Header() {
               {/* Outer Box */}
               <div className="outer-box flex items-center gap-4">
                 <a
-                  href="/images/THESAYPHARMAPRODUCTLIST.pdf"
+                  href={productListPDF}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-[#1a4137] text-white font-semibold px-12 py-4"
                 >
                   Downloads
@@ -353,7 +355,7 @@ export function Header() {
           </div>
         </div>
 
-        {/* Sticky Header */}
+        {/* Sticky Header - WITH UNDERLINE EFFECT */}
         <div
           className={`sticky-header fixed top-0 left-0 right-0 bg-white shadow-lg z-40 transition-transform duration-300 ${
             isSticky ? "translate-y-0" : "-translate-y-full"
@@ -376,7 +378,7 @@ export function Header() {
                     <li>
                       <Link
                         to="/"
-                        className="hover:text-[#1a4137] transition-colors"
+                        className="hover:text-[#1a4137] transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#1a4137] hover:after:w-full after:transition-all after:duration-300"
                       >
                         Home
                       </Link>
@@ -384,7 +386,7 @@ export function Header() {
                     <li>
                       <Link
                         to="/about"
-                        className="hover:text-[#1a4137] transition-colors"
+                        className="hover:text-[#1a4137] transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#1a4137] hover:after:w-full after:transition-all after:duration-300"
                       >
                         About
                       </Link>
@@ -392,7 +394,7 @@ export function Header() {
                     <li>
                       <Link
                         to="/services"
-                        className="hover:text-[#1a4137] transition-colors"
+                        className="hover:text-[#1a4137] transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#1a4137] hover:after:w-full after:transition-all after:duration-300"
                       >
                         Services
                       </Link>
@@ -400,7 +402,7 @@ export function Header() {
                     <li>
                       <Link
                         to="/segments"
-                        className="hover:text-[#1a4137] transition-colors"
+                        className="hover:text-[#1a4137] transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#1a4137] hover:after:w-full after:transition-all after:duration-300"
                       >
                         Segments
                       </Link>
@@ -408,7 +410,7 @@ export function Header() {
                     <li>
                       <Link
                         to="/partners"
-                        className="hover:text-[#1a4137] transition-colors"
+                        className="hover:text-[#1a4137] transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#1a4137] hover:after:w-full after:transition-all after:duration-300"
                       >
                         Partners
                       </Link>
@@ -416,7 +418,7 @@ export function Header() {
                     <li>
                       <Link
                         to="/teams"
-                        className="hover:text-[#1a4137] transition-colors"
+                        className="hover:text-[#1a4137] transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#1a4137] hover:after:w-full after:transition-all after:duration-300"
                       >
                         Teams
                       </Link>
@@ -424,7 +426,7 @@ export function Header() {
                     <li>
                       <Link
                         to="/contact"
-                        className="hover:text-[#1a4137] transition-colors"
+                        className="hover:text-[#1a4137] transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#1a4137] hover:after:w-full after:transition-all after:duration-300"
                       >
                         Contact
                       </Link>
@@ -432,7 +434,7 @@ export function Header() {
                     <li>
                       <Link
                         to="/blogs?page=1"
-                        className="text-[#00701c] hover:text-green-700 transition-colors font-bold"
+                        className="text-[#00701c] hover:text-green-700 transition-colors font-bold relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#1a4137] hover:after:w-full after:transition-all after:duration-300"
                       >
                         What's New
                       </Link>
@@ -450,6 +452,25 @@ export function Header() {
             </div>
           </div>
         </div>
+        <style jsx>{`
+          @keyframes flip-twice {
+            0% {
+              transform: rotateY(0deg);
+            }
+            25% {
+              transform: rotateY(180deg);
+            }
+            50% {
+              transform: rotateY(360deg);
+            }
+            75% {
+              transform: rotateY(180deg);
+            }
+            100% {
+              transform: rotateY(0deg);
+            }
+          }
+        `}</style>
       </header>
     </>
   );

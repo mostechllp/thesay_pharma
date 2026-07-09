@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Loader } from './components/Loader';
+import { ScrollToTop } from './components/ScrollToTop';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Services } from './pages/Services';
@@ -16,6 +17,7 @@ import { Gallery } from './pages/Gallery';
 export function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Loader>
         <Routes>
           <Route path="/" element={<Home />} />

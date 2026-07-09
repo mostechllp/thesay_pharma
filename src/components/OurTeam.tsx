@@ -60,8 +60,8 @@ export function OurTeam() {
               />
             </h2>
             <motion.a
-              href="#"
-              className="btn-two inline-block bg-[#0f3d2e] hover:bg-[#1a5c47] text-white px-6 py-2.5 rounded font-medium transition-colors text-sm uppercase tracking-wider"
+              href="/teams"
+              className="btn-two inline-block bg-[#0f3d2e] hover:bg-[#1a5c47] text-white px-[80px] py-4 rounded font-medium transition-colors text-sm uppercase tracking-wider"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

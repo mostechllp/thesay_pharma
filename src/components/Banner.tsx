@@ -44,12 +44,12 @@ export function Banner() {
                   {
                     text: "Excellence Through Efficiency",
                     className:
-                      "text-4xl md:text-4xl lg:text-5xl font-bold text-white",
+                      "text-2xl md:text-4xl lg:text-5xl font-bold text-white",
                   },
                   {
                     text: "And Partnerships",
                     className:
-                      "text-4xl md:text-4xl lg:text-5xl font-bold text-white",
+                      "text-2xl md:text-4xl lg:text-5xl font-bold text-white",
                   },
                 ]}
               />

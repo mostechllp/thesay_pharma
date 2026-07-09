@@ -43,18 +43,21 @@ const whyChoose = [
     title: "Why Choose Us?",
     icon: icon2,
     text: "THESAY Pharma is a leader in healthcare distribution with over 25 years of experience. We offer 600+ products and maintain strong partnerships with global companies, earning the trust of healthcare providers across the Middle East and beyond.",
+    bgColor: "bg-[#00701c]", // Green for item 1
   },
   {
     num: "02",
     title: "Global Reach, Local Impact",
     icon: icon3,
     text: "Headquartered in Dubai, THESAY Pharma combines global expertise with local insight. We connect international healthcare solutions to local markets, serving both private and government sectors, ensuring our products reach those who need them across key markets.",
+    bgColor: "bg-[#0f3d2e]", // Dark green for item 2
   },
   {
     num: "03",
     title: "Our Commitment to Quality",
     icon: icon4,
     text: "At THESAY Pharma, quality is our priority. We ensure that every product meets the highest safety and efficacy standards. Representing leading multinational companies, we deliver the best pharmaceutical and medical products to our valued customers.",
+    bgColor: "bg-[#00701c]", // Green for item 3
   },
 ];
 
@@ -178,7 +181,7 @@ export function About() {
           </section>
 
           {/* Steps Section - Why Choose Us */}
-          <section className="steps-section pb-[120px] bg-white px-[60px]">
+          <section className="steps-section overflow-x-hidden pb-[120px] bg-white">
             <div className="container mx-auto px-4 md:px-8">
               <div className="outer-box flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0 relative">
                 {whyChoose.map((item, index) => (
@@ -190,7 +193,7 @@ export function About() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.15 }}
                   >
-                    <div className="icon w-[180px] h-[180px] rounded-full bg-[#0f3d2e] flex items-center justify-center mx-auto relative z-10 transition-all duration-500 hover:bg-[#27ae3f]">
+                    <div className={`icon w-[180px] h-[180px] rounded-full ${item.bgColor} flex items-center justify-center mx-auto relative z-10 transition-all duration-500 hover:bg-[#27ae3f]`}>
                       <img src={item.icon} width="90" height="90" alt="icon" />
                       <span className="number absolute bottom-[10px] right-[-30px] w-[70px] h-[70px] rounded-full bg-white text-[#0f3d2e] text-[22px] font-bold flex items-center justify-center shadow-md">
                         {item.num}
@@ -220,7 +223,7 @@ export function About() {
           </section>
 
           {/* Global Presence Section */}
-          <section className="choose-section pb-[120px] bg-white px-[60px]">
+          <section className="choose-section pb-[120px] bg-white px-0 md:px-[60px]">
             <div className="container mx-auto px-4 md:px-8">
               <div className="grid lg:grid-cols-2 gap-8 items-center">
                 <motion.div
@@ -380,7 +383,7 @@ export function About() {
           <DrivenByExcellence />
 
           {/* Feature Section - Leading The Way */}
-          <section className="feature-section have-padding pb-[120px] pt-[90px] bg-[#f7f6f2] overflow-hidden relative z-10 px-[60px]">
+          <section className="feature-section have-padding pb-[120px] pt-[90px] bg-[#f7f6f2] overflow-hidden relative z-10 px-0 md:px-[60px]">
             <div className="shape absolute top-1/2 left-0 -translate-y-1/2 z-[-1]">
               <img
                 src={featureShape}
@@ -438,7 +441,7 @@ export function About() {
                 </div>
               </motion.div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-[30px]">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-[30px]">
                 {stats.map((stat, index) => (
                   <motion.div
                     key={index}

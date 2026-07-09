@@ -201,7 +201,7 @@ const services = [
 
 export function OurServices() {
   return (
-    <section className="service-section-two overflow-hidden bg-[#f7f6f2] pt-[120px] pb-[120px] px-[30px]">
+    <section className="service-section-two overflow-hidden bg-[#f7f6f2] pt-[120px] pb-[120px] px-0 md:px-[30px]">
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Title */}
         <div className="sec-title mb-[50px]">
@@ -262,7 +262,7 @@ export function OurServices() {
 
                   {/* Content */}
                   <div className="content-box">
-                    <h4 className="title text-xl font-bold text-[#0f3d2e] mb-5 transition-colors duration-300 group-hover:text-white">
+                    <h4 className="title text-2xl md:text-xl font-bold text-[#0f3d2e] mb-5 transition-colors duration-300 group-hover:text-white">
                       {service.title}
                     </h4>
                     <p className="text max-w-[345px] mx-auto text-[16px] leading-[28px] text-gray-600 text-justify transition-colors duration-300 group-hover:text-white">

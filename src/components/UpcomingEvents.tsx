@@ -34,7 +34,7 @@ const events = [
   },
 ];
 
-// Gallery images (replace with actual imports)
+// Gallery images
 const galleryImages = [
   gallery1,
   gallery2,
@@ -58,9 +58,9 @@ export function UpcomingEvents() {
         <div className="box2 w-full h-1/2 bg-white/15 absolute bottom-0 left-0"></div>
       </div>
 
-      <div className="outer-box flex items-center container mx-auto px-4 md:px-8">
-        {/* Content Column - Left Side */}
-        <div className="content-column w-full lg:w-[48%]">
+      <div className="outer-box flex flex-col lg:flex-row items-center container mx-auto px-0 md:px-8">
+        {/* Content Column - Left Side (Shown first on mobile) */}
+        <div className="content-column w-full lg:w-[48%] order-1 lg:order-none px-4">
           <div className="inner-column max-w-[600px] mx-auto lg:mx-0 lg:mr-[120px] my-[60px] lg:my-[60px]">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -126,14 +126,14 @@ export function UpcomingEvents() {
           </div>
         </div>
 
-        {/* Image Column - Right Side */}
-        <div className="image-column w-full lg:w-[52%]">
+        {/* Image Column - Right Side (Shown after text on mobile) */}
+        <div className="image-column w-full lg:w-[52%] order-2 lg:order-none">
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-3 gap-0"
+            className="grid grid-cols-1 lg:grid-cols-3 gap-0"
           >
             {galleryImages.map((image, index) => (
               <div
@@ -145,7 +145,7 @@ export function UpcomingEvents() {
                     src={image}
                     alt={`Gallery ${index + 1}`}
                     loading="lazy"
-                    className="w-full  transition-transform duration-500 group-hover:scale-110"
+                    className="w-full transition-transform duration-500 group-hover:scale-110"
                   />
                 </figure>
 

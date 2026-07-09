@@ -39,7 +39,7 @@ const items = [
 export function DrivenByExcellence() {
   return (
     <section
-      className="relative overflow-hidden py-[120px] mx-[30px] rounded-[30px]"
+      className="relative overflow-hidden py-[50px] md:py-[120px] mx-[30px] rounded-[30px]"
       style={{
         backgroundImage: `url(${servicebg})`,
         backgroundPosition: "center",
@@ -67,7 +67,7 @@ export function DrivenByExcellence() {
         {/* Section Title */}
         <div className="sec-title center text-center mb-[50px]">
           <motion.h2
-            className="title text-3xl md:text-4xl font-bold text-white uppercase tracking-wider"
+            className="title text-2xl md:text-4xl font-bold text-white uppercase tracking-wider"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -105,7 +105,7 @@ export function DrivenByExcellence() {
 
               {/* Content */}
               <div className="content mt-[35px]">
-                <h3 className="text-xl md:text-2xl font-bold mb-4">
+                <h3 className="text-2xl md:text-2xl font-bold mb-4">
                   <a
                     href="#"
                     className="
@@ -128,7 +128,7 @@ export function DrivenByExcellence() {
                     {item.title}
                   </a>
                 </h3>
-                <p className="text-[#C4C4C4] text-lg   leading-relaxed text-justify">
+                <p className="text-[#C4C4C4] text-lg leading-relaxed text-justify">
                   {item.description}
                 </p>
               </div>

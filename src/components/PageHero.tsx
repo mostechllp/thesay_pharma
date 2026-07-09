@@ -74,7 +74,7 @@ export function PageHero({ title, breadcrumb }: PageHeroProps) {
             duration: 0.6,
             delay: 0.1
           }}
-          className="text-4xl md:text-6xl font-bold text-white"
+          className="text-6xl md:text-6xl font-bold text-white"
         >
           {title}
         </motion.h1>

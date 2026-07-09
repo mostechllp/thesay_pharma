@@ -104,7 +104,7 @@ export function Services() {
           <OurServices />
 
           {/* Driving Excellence - numbered columns */}
-          <section className="py-20 bg-[#f7f6f2] px-[40px] relative overflow-visible">
+          <section className="py-20 bg-[#f7f6f2] px-[40px] relative overflow-visible text-center md:text-left">
             {/* Dual Circle Shape - positioned at the bottom left of the section */}
             <div className="absolute -bottom-[200px] -left-[200px] z-[1] pointer-events-none">
               <img

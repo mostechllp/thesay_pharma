@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 // Import all blog images with proper names
@@ -100,22 +100,41 @@ const newsItems = [
 
 export function NewsUpdates() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const itemsPerView = 3;
+  const [itemsPerView, setItemsPerView] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setItemsPerView(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsPerView(2);
+      } else {
+        setItemsPerView(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleDotClick = (index) => {
     setActiveIndex(index);
   };
 
-  // Calculate total dots (one per card until the last visible set)
-  const totalDots = newsItems.length - itemsPerView + 1;
+  // Calculate total dots based on items per view
+  const totalDots = Math.max(0, newsItems.length - itemsPerView + 1);
+
+  // Calculate the slide width percentage
+  const slideWidth = 100 / itemsPerView;
 
   return (
-    <section className="blog-section overflow-hidden py-[90px] bg-white px-[25px]">
+    <section className="blog-section overflow-hidden py-[90px] bg-white px-0 md:px-[25px]">
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Title with Explore More Button */}
         <div className="sec-title mb-[50px]">
-          <div className="flex justify-between items-center flex-wrap gap-4">
-            <h2 className="title text-3xl md:text-4xl font-bold text-[#0f3d2e] tracking-wide">
+          <div className="flex justify-between items-center gap-2 sm:gap-4">
+            <h2 className="title text-3xl md:text-3xl lg:text-4xl font-bold text-[#0f3d2e] tracking-wide whitespace-nowrap">
               <AnimatedText
                 inline
                 lines={[
@@ -127,7 +146,7 @@ export function NewsUpdates() {
             </h2>
             <a
               href="/blogs"
-              className="btn-two inline-block bg-[#0f3d2e] hover:bg-[#1a5c47] text-white px-10 py-5 rounded font-medium transition-colors text-sm uppercase tracking-wider"
+              className="btn-two inline-block bg-[#0f3d2e] hover:bg-[#1a5c47] text-white px-8  md:px-10 py-3 sm:py-2 md:py-5 rounded font-medium transition-colors text-[13px] md:text-[20px] tracking-wider whitespace-nowrap flex-shrink-0"
             >
               Explore More
             </a>
@@ -139,7 +158,7 @@ export function NewsUpdates() {
           <motion.div
             className="flex"
             animate={{
-              x: `-${activeIndex * 33.333}%`,
+              x: `-${activeIndex * slideWidth}%`,
             }}
             transition={{
               duration: 0.8,
@@ -147,7 +166,11 @@ export function NewsUpdates() {
             }}
           >
             {newsItems.map((item) => (
-              <div key={item.id} className="w-1/3 flex-shrink-0 px-3">
+              <div
+                key={item.id}
+                className="flex-shrink-0 px-3"
+                style={{ width: `${slideWidth}%` }}
+              >
                 <div className="inner-box rounded-lg overflow-hidden shadow-[0px_4.4px_20px_-1px_rgba(19,16,34,0.05)] bg-white h-full">
                   {/* Image */}
                   <div className="overflow-hidden">
@@ -176,24 +199,26 @@ export function NewsUpdates() {
         </div>
 
         {/* Pagination Dots */}
-        <div className="mt-10 flex justify-center items-center gap-3">
-          {Array.from({ length: totalDots }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => handleDotClick(index)}
-              aria-label={`Go to slide ${index + 1}`}
-              className={`w-4 h-4 rounded-full flex items-center justify-center transition-all duration-300 ${
-                index === activeIndex ? "border border-[#0f3d2e]" : ""
-              }`}
-            >
-              <span
-                className={`w-2 h-2 rounded-full ${
-                  index === activeIndex ? "bg-[#0f3d2e]" : "bg-gray-300"
+        {totalDots > 1 && (
+          <div className="mt-10 flex justify-center items-center gap-3">
+            {Array.from({ length: totalDots }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => handleDotClick(index)}
+                aria-label={`Go to slide ${index + 1}`}
+                className={`w-4 h-4 rounded-full flex items-center justify-center transition-all duration-300 ${
+                  index === activeIndex ? "border border-[#0f3d2e]" : ""
                 }`}
-              />
-            </button>
-          ))}
-        </div>
+              >
+                <span
+                  className={`w-2 h-2 rounded-full ${
+                    index === activeIndex ? "bg-[#0f3d2e]" : "bg-gray-300"
+                  }`}
+                />
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

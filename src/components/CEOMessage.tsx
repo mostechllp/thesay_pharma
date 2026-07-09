@@ -5,7 +5,7 @@ import strategyGlobe from "../assets/images/shapes/stategy-globe.webp";
 
 export function CEOMessage() {
   return (
-    <section className="strategy-section pt-[60px] pb-[60px] overflow-hidden relative z-10 bg-[#f7f6f2] px-[30px]">
+    <section className="strategy-section pt-[60px] pb-[60px] overflow-hidden relative z-10 bg-[#f7f6f2] px-2 md:px-[30px]">
 
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -20,7 +20,7 @@ export function CEOMessage() {
             <div className="inner-column max-w-[620px] lg:max-w-[620px]">
               {/* CEO's Message Label */}
               <div className="sec-title mb-[30px]">
-                <h4 className="text-[#00701c] text-base font-semibold tracking-wider mb-2">
+                <h4 className="text-[#00701c] text-2xl md:text-base font-bold tracking-wider mb-2">
                   CEO's Message
                 </h4>
                 <h2 className="title text-[#0f3d2e] text-3xl md:text-4xl font-bold">

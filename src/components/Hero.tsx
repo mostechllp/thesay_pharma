@@ -8,7 +8,7 @@ import thesayVet from "../assets/images/thesay-vet.png";
 
 export function Hero() {
   return (
-    <section className="banner-section video-banner-section relative w-full min-h-[84vh] overflow-hidden flex items-center z-10 pt-[140px] pb-[70px]">
+    <section className="banner-section video-banner-section relative w-full min-h-[70vh] md:min-h-[84vh] overflow-hidden flex items-center z-10 pt-[100px] md:pt-[140px] pb-[50px] md:pb-[70px]">
       {/* Video Background */}
       <video
         autoPlay
@@ -36,13 +36,15 @@ export function Hero() {
               transition={{ duration: 0.8 }}
               className="video-banner-content text-white max-w-[900px] w-full text-left"
             >
-              <h1 className="title text-[76px] leading-[1.05] font-semibold text-white mb-5 drop-shadow-[0_4px_15px_rgba(0,0,0,0.6)] tracking-[-1.5px]">
+              <h1 className="title text-[42px] sm:text-[56px] lg:text-[76px] leading-[1.1] lg:leading-[1.05] font-semibold text-white mb-3 lg:mb-5 drop-shadow-[0_4px_15px_rgba(0,0,0,0.6)] tracking-[-1.5px]">
                 We Deliver<br />
                 <span className="font-extrabold text-[#48e56f] drop-shadow-[0_4px_15px_rgba(0,0,0,0.6)]">
                   What We<br/> Promise
                 </span>
               </h1>
-              <p className="text text-[16px] leading-[1.6] font-normal text-white/75 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] mb-8 max-w-[750px]">
+              
+              {/* Description - Hidden on mobile, shown on tablet and above */}
+              <p className="text text-[16px] leading-[1.6] font-normal text-white/75 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] mb-8 max-h-[200px] md:max-w-[750px] ">
                 THESAY Pharma is a prominent name among healthcare distributors,
                 supplying a comprehensive range of pharmaceutical products from 50+
                 multinational companies across the globe. We have built our brand
@@ -50,11 +52,11 @@ export function Hero() {
               </p>
 
               {/* Buttons */}
-              <div className="banner-btn-box mt-7 flex flex-wrap gap-4">
-                <a href="/about" className="btn-two bg-gradient-to-r from-[#00701c] to-[#5ebd8c] text-white font-semibold text-[17px] px-11 py-6 rounded-full hover:bg-white hover:text-[#00701c] transition-all duration-300 inline-flex items-center gap-2 shadow-lg shadow-green-500/25 hover:shadow-white/20 hover:-translate-y-1">
+              <div className="banner-btn-box mt-4 sm:mt-7 flex flex-wrap gap-3 sm:gap-4">
+                <a href="/about" className="btn-two bg-gradient-to-r from-[#00701c] to-[#5ebd8c] text-white font-semibold text-[15px] sm:text-[17px] px-6 sm:px-11 py-4 sm:py-6 rounded-full hover:bg-white hover:text-[#00701c] transition-all duration-300 inline-flex items-center gap-2 shadow-lg shadow-green-500/25 hover:shadow-white/20 hover:-translate-y-1">
                   About Us <ArrowRight size={18} />
                 </a>
-                <a href="/services" className="btn-twoo bg-white/5 border border-[#37722f]/40 text-white font-semibold text-[17px] px-11 py-6 rounded-full backdrop-blur-md hover:bg-white/10 transition-all duration-300 inline-flex items-center">
+                <a href="/services" className="btn-twoo bg-white/5 border border-[#37722f]/40 text-white font-semibold text-[15px] sm:text-[17px] px-6 sm:px-11 py-4 sm:py-6 rounded-full backdrop-blur-md hover:bg-white/10 transition-all duration-300 inline-flex items-center">
                   Our Services
                 </a>
               </div>

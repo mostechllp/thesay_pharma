@@ -34,7 +34,7 @@ const team = [
 
 export function OurTeam() {
   return (
-    <section className="team-section pt-[120px] px-[30px] pb-[60px] overflow-hidden relative z-10 bg-white">
+    <section className="team-section pt-[120px] px-0 md:px-[30px] pb-[60px] overflow-hidden relative z-10 bg-white">
       {/* Shape Decoration */}
       <div className="team-shape absolute bottom-0 left-0 z-[-1]">
         <img
@@ -48,7 +48,7 @@ export function OurTeam() {
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Title with View More Button */}
         <div className="sec-title mb-[50px]">
-          <div className="flex justify-between items-center flex-wrap gap-4">
+          <div className="flex justify-between items-center gap-2 sm:gap-4">
             <h2 className="title text-3xl md:text-4xl font-bold text-[#0f3d2e] tracking-wide">
               <AnimatedText
                 inline
@@ -61,7 +61,7 @@ export function OurTeam() {
             </h2>
             <motion.a
               href="/teams"
-              className="btn-two inline-block bg-[#0f3d2e] hover:bg-[#1a5c47] text-white px-[80px] py-4 rounded font-medium transition-colors text-sm uppercase tracking-wider"
+              className="btn-two inline-block bg-[#0f3d2e] hover:bg-[#1a5c47] text-white px-10 md:px-[80px] py-4 rounded font-medium transition-colors text-sm tracking-wider"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

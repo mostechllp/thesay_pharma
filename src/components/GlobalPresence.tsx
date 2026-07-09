@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import map from "../assets/images/choose-image1.webp"
 export function GlobalPresence() {
   return (
-    <section className="py-20 px-10 bg-white border-t border-gray-100">
+    <section className="py-20 px-0 md:px-5 bg-white border-t border-gray-100">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -22,7 +22,7 @@ export function GlobalPresence() {
               duration: 0.6
             }}>
             
-            <h2 className="text-5xl font-bold text-[#00701c] mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#00701c] mb-6">
               Our Global Presence
             </h2>
             <div className="space-y-6 text-gray-600 leading-relaxed">

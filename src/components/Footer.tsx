@@ -16,7 +16,7 @@ import {
 
 export function Footer() {
   return (
-    <footer className="main-footer footer-style-three pt-[100px] relative bg-[#0f3d2e] overflow-hidden px-[30px]">
+    <footer className="main-footer footer-style-three pt-[100px] relative bg-[#0f3d2e] overflow-hidden px-0 md:px-[30px]">
       {/* Dual Circle Shape - behind CTA, rotating like globe */}
       <div className="sec-shape absolute top-0 -right-[200px] z-0 pointer-events-none">
         <img
@@ -31,7 +31,7 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         {/* CTA Banner */}
         <motion.div
-          className="footer-cta relative z-10 bg-[#00701C] p-[60px_80px] rounded-[11px] flex items-center gap-[30px] flex-wrap justify-between"
+          className="footer-cta relative z-10 bg-[#00701C] p-4 md:p-[60px_80px] rounded-[11px] flex items-center gap-[30px] flex-wrap justify-between"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -39,7 +39,7 @@ export function Footer() {
         >
           <div className="sec-title max-w-[570px]">
             <motion.h2
-              className="title text-white text-3xl md:text-5xl font-bold"
+              className="title text-white text-2xl md:text-5xl font-bold"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -51,7 +51,7 @@ export function Footer() {
           <div className="btn-wrp mr-[30px] text-center w-fit">
             <motion.a
               href="/contact"
-              className="cta-btn inline-block bg-white text-[#0f3d2e] px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors"
+              className="cta-btn inline-block bg-white text-[#0f3d2e] px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -86,7 +86,11 @@ export function Footer() {
               <div className="footer-widget about-widget">
                 <div className="logo mb-6">
                   <a href="/">
-                    <img src={logoLight} alt="THESAY PHARMA" className="h-12" />
+                    <img
+                      src={logoLight}
+                      alt="THESAY PHARMA"
+                      className="h-20 md:h-12"
+                    />
                   </a>
                 </div>
                 <div className="widget-content">
@@ -104,9 +108,25 @@ export function Footer() {
                 <div className="widget-content">
                   <ul className="space-y-6">
                     <li>
-                      <p className="text-white text-lg mb-2">For Business</p>
+                      <p className="text-white text-lg mb-2">For Sales</p>
                       <a
                         href="mailto:info@thesaypharma.ae"
+                        className="relative inline-flex items-center gap-2 text-[#d1d5db] pb-[2px]
+             before:absolute before:left-0 before:bottom-0
+             before:w-0 before:h-[1px]
+             before:bg-[#27ae3f]
+             before:transition-all before:duration-300
+             hover:before:w-full"
+                      >
+                        <Mail size={16} />
+                        sales@thesaypharma.ae
+                      </a>
+                    </li>
+
+                    <li>
+                      <p className="text-white text-lg mb-2">For Business</p>
+                      <a
+                        href="mailto:pv.safety@thesaypharma.ae"
                         className="flex items-center gap-2 text-[#d1d5db] hover:text-[#27ae3f] transition-colors"
                       >
                         <Mail size={16} />
@@ -119,22 +139,11 @@ export function Footer() {
                         For Safety & Quality
                       </p>
                       <a
-                        href="mailto:pv.safety@thesaypharma.ae"
-                        className="flex items-center gap-2 text-[#d1d5db] hover:text-[#27ae3f] transition-colors"
-                      >
-                        <Mail size={16} />
-                        pv.safety@thesaypharma.ae
-                      </a>
-                    </li>
-
-                    <li>
-                      <p className="text-white text-lg mb-2">Careers</p>
-                      <a
                         href="mailto:careers@thesaypharma.ae"
                         className="flex items-center gap-2 text-[#d1d5db] hover:text-[#27ae3f] transition-colors"
                       >
                         <Mail size={16} />
-                        careers@thesaypharma.ae
+                        pv.safety@thesaypharma.ae
                       </a>
                     </li>
                   </ul>
@@ -150,7 +159,7 @@ export function Footer() {
                     <li>
                       <Link
                         to="/careers"
-                        className="text-white text-[16px] hover:text-[#27ae3f] transition-colors relative before:absolute before:left-0 before:bottom-[3px] before:w-0 before:h-[1px] before:bg-[#27ae3f] before:transition-all before:duration-300 hover:before:w-full"
+                        className="text-white text-[16px] relative before:absolute before:left-0 before:bottom-[-2px] before:w-0 before:h-[1px] before:bg-[#27ae3f] before:transition-all before:duration-300 hover:before:w-full"
                       >
                         Careers
                       </Link>
@@ -158,7 +167,7 @@ export function Footer() {
                     <li>
                       <Link
                         to="/services"
-                        className="text-white text-[16px] hover:text-[#27ae3f] transition-colors relative before:absolute before:left-0 before:bottom-[3px] before:w-0 before:h-[1px] before:bg-[#27ae3f] before:transition-all before:duration-300 hover:before:w-full"
+                        className="text-white text-[16px] relative before:absolute before:left-0 before:bottom-[-2px] before:w-0 before:h-[1px] before:bg-[#27ae3f] before:transition-all before:duration-300 hover:before:w-full"
                       >
                         Services
                       </Link>
@@ -166,7 +175,7 @@ export function Footer() {
                     <li>
                       <Link
                         to="/segments"
-                        className="text-white text-[16px] hover:text-[#27ae3f] transition-colors relative before:absolute before:left-0 before:bottom-[3px] before:w-0 before:h-[1px] before:bg-[#27ae3f] before:transition-all before:duration-300 hover:before:w-full"
+                        className="text-white text-[16px] relative before:absolute before:left-0 before:bottom-[-2px] before:w-0 before:h-[1px] before:bg-[#27ae3f] before:transition-all before:duration-300 hover:before:w-full"
                       >
                         Business Segments
                       </Link>
@@ -174,7 +183,7 @@ export function Footer() {
                     <li>
                       <Link
                         to="/partners"
-                        className="text-white text-[16px] hover:text-[#27ae3f] transition-colors relative before:absolute before:left-0 before:bottom-[3px] before:w-0 before:h-[1px] before:bg-[#27ae3f] before:transition-all before:duration-300 hover:before:w-full"
+                        className="text-white text-[16px] relative before:absolute before:left-0 before:bottom-[-2px] before:w-0 before:h-[1px] before:bg-[#27ae3f] before:transition-all before:duration-300 hover:before:w-full"
                       >
                         Partners
                       </Link>
@@ -182,7 +191,7 @@ export function Footer() {
                     <li>
                       <Link
                         to="/our-team"
-                        className="text-white text-[16px] hover:text-[#27ae3f] transition-colors relative before:absolute before:left-0 before:bottom-[3px] before:w-0 before:h-[1px] before:bg-[#27ae3f] before:transition-all before:duration-300 hover:before:w-full"
+                        className="text-white text-[16px] relative before:absolute before:left-0 before:bottom-[-2px] before:w-0 before:h-[1px] before:bg-[#27ae3f] before:transition-all before:duration-300 hover:before:w-full"
                       >
                         Our Team
                       </Link>
@@ -190,7 +199,7 @@ export function Footer() {
                     <li>
                       <Link
                         to="/blogs"
-                        className="text-white text-[16px] hover:text-[#27ae3f] transition-colors relative before:absolute before:left-0 before:bottom-[3px] before:w-0 before:h-[1px] before:bg-[#27ae3f] before:transition-all before:duration-300 hover:before:w-full"
+                        className="text-white text-[16px] relative before:absolute before:left-0 before:bottom-[-2px] before:w-0 before:h-[1px] before:bg-[#27ae3f] before:transition-all before:duration-300 hover:before:w-full"
                       >
                         Latest News
                       </Link>
@@ -206,7 +215,7 @@ export function Footer() {
                 <div className="widget-content">
                   <ul className="user-links space-y-3">
                     <li className="flex gap-3 items-center">
-                      <Phone size={18} className="text-[#27ae3f] shrink-0" />
+                      <Phone size={18} className="text-white shrink-0" />
                       <a
                         href="tel:+97145876443"
                         className="text-white hover:text-[#27ae3f] transition-colors"
@@ -216,7 +225,7 @@ export function Footer() {
                     </li>
 
                     <li className="flex gap-3 items-center">
-                      <Mail size={18} className="text-[#27ae3f] shrink-0" />
+                      <Mail size={18} className="text-white shrink-0" />
                       <a
                         href="mailto:info@thesaypharma.ae"
                         className="text-white hover:text-[#27ae3f] transition-colors"
@@ -228,7 +237,7 @@ export function Footer() {
                     <li className="flex gap-3 items-start">
                       <MapPin
                         size={18}
-                        className="text-[#27ae3f] shrink-0 mt-1"
+                        className="text-white shrink-0 mt-1"
                       />
                       <span className="text-white leading-relaxed">
                         #1101, Anantara Downtown
@@ -286,7 +295,7 @@ export function Footer() {
           </div>
 
           {/* Bottom Content */}
-          <div className="pt-[50px] pb-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="pt-[50px] pb-6 flex flex-row items-center justify-between gap-2 sm:gap-4">
             <p className="text-[#d1d5db] text-lg">
               &copy; {new Date().getFullYear()} THESAY. All Rights Reserved.
             </p>

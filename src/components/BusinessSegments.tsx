@@ -33,7 +33,7 @@ export const segments = [
 
 export function BusinessSegments() {
   return (
-    <section className="relative py-[90px] overflow-hidden bg-[#f7f6f2] px-[50px]">
+    <section className="relative py-[90px] overflow-hidden bg-[#f7f6f2] px-0 md:px-[50px]">
       {/* Shape Decoration - positioned left center */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 z-0 opacity-50 pointer-events-none">
         <img 

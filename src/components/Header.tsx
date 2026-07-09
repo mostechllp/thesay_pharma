@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
+import logo_light from "../assets/images/logo-light.png";
 import productListPDF from "../assets/images/THESAYPHARMAPRODUCTLIST.pdf";
 
 export function Header() {
@@ -28,7 +29,7 @@ export function Header() {
     <>
       <header className="main-header header-style-one">
         {/* Header Top */}
-        <div className="header-top bg-black text-white h-[34px]">
+        <div className="hidden md:block header-top bg-black text-white h-[34px] ">
           <div className="flex items-center h-full">
             <div className="w-[70%] flex items-center px-8">
               <ul className="info-list flex flex-wrap items-center gap-6 text-white text-sm font-medium">
@@ -174,17 +175,18 @@ export function Header() {
               </div>
 
               {/* Outer Box */}
-              <div className="outer-box flex items-center gap-4">
+              <div className="flex items-center gap-4">
                 <a
                   href={productListPDF}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#1a4137] text-white font-semibold px-12 py-4"
+                  className="hidden md:block bg-[#1a4137] text-white font-semibold px-12 py-4"
                 >
                   Downloads
                 </a>
+
                 <button
-                  className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors mobile-nav-toggler text-[#00701c]"
+                  className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors text-[#00701c]"
                   onClick={() => setIsMobileMenuOpen(true)}
                   aria-label="Toggle menu"
                 >
@@ -197,13 +199,24 @@ export function Header() {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 z-50 lg:hidden ${isMobileMenuOpen ? "block" : "hidden"}`}
+          className={`fixed inset-0 z-50 lg:hidden transition-all duration-500 ease-in-out ${
+            isMobileMenuOpen ? "visible opacity-100" : "invisible opacity-0"
+          }`}
         >
+          {/* Backdrop */}
           <div
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm"
+            className={`fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-500 ease-in-out ${
+              isMobileMenuOpen ? "opacity-100" : "opacity-0"
+            }`}
             onClick={() => setIsMobileMenuOpen(false)}
           ></div>
-          <div className="fixed right-0 top-0 h-full w-[300px] max-w-full bg-[#222222] shadow-2xl overflow-y-auto">
+
+          {/* Menu Panel - Slides from right */}
+          <div
+            className={`fixed right-0 top-0 h-full w-[300px] max-w-full bg-[#222222] shadow-2xl overflow-y-auto transition-transform duration-500 ease-in-out ${
+              isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
+          >
             <div className="flex flex-col h-full">
               <div className="upper-box flex items-center justify-between p-4 border-b border-white/10">
                 <Link
@@ -212,7 +225,7 @@ export function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <img
-                    src="/images/logo-light.png"
+                    src={logo_light}
                     alt="THESAY PHARMA"
                     className="max-h-[65px] w-auto"
                   />
@@ -284,19 +297,11 @@ export function Header() {
                 </Link>
               </nav>
 
-              <div className="content-box p-5 border-t border-white/10 border-b border-white/10">
-                <h4 className="text-white font-bold text-xl mb-2">About Us</h4>
-                <p className="text-white/50 text-sm leading-7 text-justify max-w-[245px]">
-                  THESAY Pharma, headquartered in Dubai, is a privately held &
-                  diversified organization.
-                </p>
-              </div>
-
               <ul className="contact-list-one p-5 space-y-5">
                 <li className="relative pl-[54px] min-h-[50px]">
                   <div className="contact-info-box">
                     <Phone
-                      size={20}
+                      size={40}
                       className="absolute left-0 top-1 text-white"
                     />
                     <span className="block text-xs text-[#00701c] font-medium uppercase">
@@ -313,7 +318,7 @@ export function Header() {
                 <li className="relative pl-[54px] min-h-[50px]">
                   <div className="contact-info-box">
                     <Mail
-                      size={20}
+                      size={40}
                       className="absolute left-0 top-1 text-white"
                     />
                     <span className="block text-xs text-[#00701c] font-medium uppercase">
@@ -354,7 +359,6 @@ export function Header() {
             </div>
           </div>
         </div>
-
         {/* Sticky Header - WITH UNDERLINE EFFECT */}
         <div
           className={`sticky-header fixed top-0 left-0 right-0 bg-white shadow-lg z-40 transition-transform duration-300 ${
@@ -362,7 +366,7 @@ export function Header() {
           }`}
         >
           <div className="auto-container max-w-[1450px] mx-auto px-4 md:px-8">
-            <div className="inner-container flex items-center py-3">
+            <div className="inner-container flex items-center justify-between py-3">
               <div className="logo flex-shrink-0">
                 <Link to="/">
                   <img
@@ -372,7 +376,7 @@ export function Header() {
                   />
                 </Link>
               </div>
-              <div className="nav-outer ml-auto hidden lg:block">
+              <div className="nav-outer hidden lg:block">
                 <nav className="main-menu">
                   <ul className="navigation flex items-center space-x-14 font-bold text-[16px] text-gray-800">
                     <li>

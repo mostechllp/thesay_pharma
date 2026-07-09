@@ -169,7 +169,7 @@ export function Contact() {
               </div>
 
               {/* Get In Touch Section */}
-              <div className="mt-[100px] px-[50px]">
+              <div className="mt-[100px] px-0 md:px-[50px]">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {/* Map Column */}
                   <motion.div

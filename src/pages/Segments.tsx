@@ -100,7 +100,7 @@ export function Segments() {
           </section>
 
           {/* Global Healthcare Solutions two-column */}
-          <section className="bg-white ps-[30px]">
+          <section className="bg-white ps-0 md:ps-[30px]">
             <div className="grid lg:grid-cols-2">
               <motion.div
                 initial={{

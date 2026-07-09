@@ -343,8 +343,8 @@ export function Teams() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
                   <div className="inner-column max-w-[580px] lg:max-w-[580px] mt-[30px] lg:mt-0">
-                    <div className="sec-title mb-[30px] ps-[50px]">
-                      <h1 className="title text-[#008000] text-3xl md:text-4xl lg:text-5xl font-bold leading-[53px]">
+                    <div className="sec-title mb-[30px] ps:0 md:ps-[50px]">
+                      <h1 className="title text-[#008000] text-5xl md:text-4xl lg:text-5xl font-bold leading-[53px]">
                         Leadership is purpose in motion—science honest, care
                         human, life first.
                       </h1>
@@ -380,7 +380,7 @@ export function Teams() {
                   </div>
 
                   {/* Team Grid */}
-                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 p-0">
                     {group.members.map((member, index) => (
                       <motion.div
                         key={member.name}

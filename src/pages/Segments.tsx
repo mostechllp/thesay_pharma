@@ -22,7 +22,7 @@ export function Segments() {
         <main>
           <PageHero title="Segments" breadcrumb="Segments" />
 
-          <section className="relative py-[90px] overflow-hidden bg-[#f7f6f2] px-[50px]">
+          <section className="relative py-[90px] overflow-hidden bg-[#f7f6f2] px-0 md:px-[50px]">
             {/* Shape Decoration - positioned left center */}
             <div className="absolute top-1/2 left-0 -translate-y-1/2 z-0 opacity-50 pointer-events-none">
               <img
@@ -46,7 +46,7 @@ export function Segments() {
                   <h2 className="text-3xl md:text-5xl font-bold text-[#0f3d2e] uppercase tracking-wide lg:whitespace-nowrap">
                     BUSINESS SEGMENTS
                   </h2>
-                  <p className="text-[#0f3d2e]/80 text-base md:text-xl max-w-2xl lg:text-left ps-10">
+                  <p className="text-[#0f3d2e]/80 text-base md:text-xl max-w-2xl lg:text-left ps-0 md:ps-10">
                     THESAY Pharma has a significant share of the Healthcare
                     market, encompassing both the Government and Private
                     sectors.
@@ -123,7 +123,7 @@ export function Segments() {
                   Global Healthcare Solutions: Medicines, Equipment,
                   Diagnostics, Veterinary Care
                 </h2>
-                <div className="space-y-6 border-l-2 border-[#27ae3f] pl-6 text-gray-500 text-lg leading-relaxed">
+                <div className="space-y-6 border-l-2 border-[#27ae3f] pl-3 md:pl-6 text-gray-500 text-lg leading-relaxed">
                   <p>
                     THESAY Pharma excels in delivering high-quality medicines,
                     medical equipment, diagnostic tools, and veterinary

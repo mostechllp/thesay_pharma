@@ -121,7 +121,7 @@ export function About() {
           <PageHero title="THESAY Pharma" breadcrumb="About Us" />
 
           {/* About Section - Your Trusted Partner */}
-          <section className="about-section-three overflow-hidden pt-[120px] pb-[120px] bg-white">
+          <section className="about-section-three overflow-hidden pt-[120px] pb-[120px] bg-white px-0 md:px-[50px]">
             <div className="container mx-auto px-4 md:px-8">
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 <motion.div
@@ -181,25 +181,27 @@ export function About() {
           </section>
 
           {/* Steps Section - Why Choose Us */}
-          <section className="steps-section overflow-x-hidden pb-[120px] bg-white">
-            <div className="container mx-auto px-4 md:px-8">
-              <div className="outer-box flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0 relative">
+          <section className="steps-section overflow-x-hidden pb-[120px] bg-white px-0 md:px-[50px]">
+            <div className="w-full mx-auto px-0 md:px-8 ">
+              <div className="border border-red-50 outer-box flex flex-col items-center md:flex-row justify-between gap-8">
                 {whyChoose.map((item, index) => (
                   <motion.div
                     key={index}
-                    className={`steps-block text-center max-w-[310px] relative z-10 ${index === 1 ? "active" : ""}`}
+                    className={` w-full max-w-none md:max-w-[310px] relative z-10 text-center px-4 ${
+    index === 1 ? "active" : ""
+  }`}
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.15 }}
                   >
-                    <div className={`icon w-[180px] h-[180px] rounded-full ${item.bgColor} flex items-center justify-center mx-auto relative z-10 transition-all duration-500 hover:bg-[#27ae3f]`}>
+                    <div className={` icon w-[180px] h-[180px] rounded-full ${item.bgColor} flex items-center justify-center mx-auto relative z-10 transition-all duration-500 hover:bg-[#27ae3f]`}>
                       <img src={item.icon} width="90" height="90" alt="icon" />
                       <span className="number absolute bottom-[10px] right-[-30px] w-[70px] h-[70px] rounded-full bg-white text-[#0f3d2e] text-[22px] font-bold flex items-center justify-center shadow-md">
                         {item.num}
                       </span>
                     </div>
-                    <div className="content mt-[30px]">
+                    <div className=" content mt-[30px]">
                       <h4 className="title text-xl font-bold text-[#0f3d2e] mb-[15px]">
                         {item.title}
                       </h4>
@@ -208,7 +210,7 @@ export function About() {
                       </p>
                     </div>
                     {index < 2 && (
-                      <div className="line hidden md:block absolute top-[90px] right-[-115%]">
+                      <div className=" line hidden md:block absolute top-[90px] right-[-115%]">
                         <img
                           src={stepsLine}
                           alt="shape"
@@ -223,7 +225,7 @@ export function About() {
           </section>
 
           {/* Global Presence Section */}
-          <section className="choose-section pb-[120px] bg-white px-0 md:px-[60px]">
+          <section className="choose-section pb-[120px] bg-white px-0 md:px-[50px]">
             <div className="container mx-auto px-4 md:px-8">
               <div className="grid lg:grid-cols-2 gap-8 items-center">
                 <motion.div
@@ -289,7 +291,7 @@ export function About() {
           </section>
 
           {/* Corporate Structure Section */}
-          <section className="corporate-section pb-[120px]">
+          <section className="corporate-section pb-[120px] px-0 md:px-[50px]">
             <div className="container mx-auto px-4 md:px-8">
               <div className="grid lg:grid-cols-2 gap-8 items-center">
                 <motion.div

@@ -12,9 +12,11 @@ import {
   Linkedin,
   Instagram,
   ChevronsUp,
+  ArrowUpRight,
 } from "lucide-react";
 
 export function Footer() {
+  const MotionLink = motion(Link);
   return (
     <footer className="main-footer footer-style-three pt-[100px] relative bg-[#0f3d2e] overflow-hidden px-0 md:px-[30px]">
       {/* Dual Circle Shape - behind CTA, rotating like globe */}
@@ -49,32 +51,17 @@ export function Footer() {
             </motion.h2>
           </div>
           <div className="btn-wrp mr-[30px] text-center w-fit">
-            <motion.a
-              href="/contact"
-              className="cta-btn inline-block bg-white text-[#0f3d2e] px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors"
+            <MotionLink
+              to="/contact"
+              className="cursor-pointer inline-flex items-center gap-2 bg-white text-[#0f3d2e] px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Let's Connect
-              <svg
-                className="inline-block ml-2 w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </motion.a>
-          </div>
-          <div className="bg-shape absolute bottom-0 right-0 opacity-20">
-            <img src={ctaLine} alt="Decorative Line" loading="lazy" />
+              <span>Let's Connect</span>
+              <ArrowUpRight size={20} />
+            </MotionLink>
           </div>
         </motion.div>
 
@@ -127,7 +114,12 @@ export function Footer() {
                       <p className="text-white text-lg mb-2">For Business</p>
                       <a
                         href="mailto:pv.safety@thesaypharma.ae"
-                        className="flex items-center gap-2 text-[#d1d5db] hover:text-[#27ae3f] transition-colors"
+                        className="relative inline-flex items-center gap-2 text-[#d1d5db] pb-[2px]
+             before:absolute before:left-0 before:bottom-0
+             before:w-0 before:h-[1px]
+             before:bg-[#27ae3f]
+             before:transition-all before:duration-300
+             hover:before:w-full"
                       >
                         <Mail size={16} />
                         info@thesaypharma.ae
@@ -140,7 +132,12 @@ export function Footer() {
                       </p>
                       <a
                         href="mailto:careers@thesaypharma.ae"
-                        className="flex items-center gap-2 text-[#d1d5db] hover:text-[#27ae3f] transition-colors"
+                        className="relative inline-flex items-center gap-2 text-[#d1d5db] pb-[2px]
+             before:absolute before:left-0 before:bottom-0
+             before:w-0 before:h-[1px]
+             before:bg-[#27ae3f]
+             before:transition-all before:duration-300
+             hover:before:w-full"
                       >
                         <Mail size={16} />
                         pv.safety@thesaypharma.ae
@@ -218,7 +215,12 @@ export function Footer() {
                       <Phone size={18} className="text-white shrink-0" />
                       <a
                         href="tel:+97145876443"
-                        className="text-white hover:text-[#27ae3f] transition-colors"
+                        className="relative inline-flex items-center gap-2 text-white pb-[2px]
+             before:absolute before:left-0 before:bottom-0
+             before:w-0 before:h-[1px]
+             before:bg-[#27ae3f]
+             before:transition-all before:duration-300
+             hover:before:w-full"
                       >
                         +971 4 587 6443
                       </a>
@@ -228,18 +230,27 @@ export function Footer() {
                       <Mail size={18} className="text-white shrink-0" />
                       <a
                         href="mailto:info@thesaypharma.ae"
-                        className="text-white hover:text-[#27ae3f] transition-colors"
+                        className="relative inline-flex items-center gap-2 text-white pb-[2px]
+             before:absolute before:left-0 before:bottom-0
+             before:w-0 before:h-[1px]
+             before:bg-[#27ae3f]
+             before:transition-all before:duration-300
+             hover:before:w-full"
                       >
                         info@thesaypharma.ae
                       </a>
                     </li>
 
-                    <li className="flex gap-3 items-start">
-                      <MapPin
-                        size={18}
-                        className="text-white shrink-0 mt-1"
-                      />
-                      <span className="text-white leading-relaxed">
+                    <li className="flex gap-3 items-start cursor-pointer">
+                      <MapPin size={18} className="text-white shrink-0 mt-1" />
+                      <span
+                        className="text-white leading-relaxed relative pb-[2px]
+             before:absolute before:left-0 before:bottom-0
+             before:w-0 before:h-[1px]
+             before:bg-[#27ae3f]
+             before:transition-all before:duration-300
+             hover:before:w-full"
+                      >
                         #1101, Anantara Downtown
                         <br />
                         Business Tower, Marasi Dr,
